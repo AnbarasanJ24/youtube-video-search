@@ -11,3 +11,46 @@ body {
   width: 100%;
   font-family: $font-stack;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  min-height: 100vh;
+
+  &__main {
+    grid-column: 2/12;
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  &__search {
+    @include grid-center;
+    padding: 2rem 0;
+  }
+
+  &__video {
+    @include grid-rowColumn-layout(4, 12);
+  }
+
+  &__videoPlayer {
+    @include grid-rowColumn-span(1, 4, 1, 9);
+    // grid-row: 1/4;
+    // grid-column: 1/9;
+    background-color: rgba(225, 65, 78, 0.253);
+  }
+
+  &__description {
+    @include grid-rowColumn-span(4, 5, 1, 9);
+    // grid-row: 4/5;
+    // grid-column: 1/9;
+    background-color: rgba(169, 225, 65, 0.253);
+  }
+
+  &__videoList {
+    @include grid-rowColumn-span(1, -1, 9, 1);
+    // grid-row: 1/-1;
+    // grid-column: 9/-1;
+    background-color: rgba(65, 225, 100, 0.253);
+  }
+}

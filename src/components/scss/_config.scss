@@ -1,3 +1,19 @@
 // Varibales, Mixin and Functions
 
 $font-stack: "Montserrat", sans-serif;
+
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
+@mixin grid-rowColumn-layout($rows, $column) {
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  grid-template-rows: repeat($rows, 1fr);
+}
+
+@mixin grid-rowColumn-span($rowStart, $rowEnd, $columnStart, $columnEnd) {
+  grid-row: $rowStart/$rowEnd;
+  grid-column: $columnStart/$columnEnd;
+}
