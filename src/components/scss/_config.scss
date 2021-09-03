@@ -14,6 +14,8 @@ $font-stack: "Montserrat", sans-serif;
 }
 
 @mixin grid-rowColumn-span($rowStart, $rowEnd, $columnStart, $columnEnd) {
-  grid-row: $rowStart/$rowEnd;
-  grid-column: $columnStart/$columnEnd;
+  grid-row-start: $rowStart;
+  grid-row-end: $rowEnd;
+  grid-column-start: $columnStart;
+  grid-column-end: $columnEnd;
 }

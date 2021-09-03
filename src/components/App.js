@@ -1,11 +1,21 @@
 import React from 'react';
 import './scss/App.scss';
 import SearchBar from './SearchBar';
+import youtube from '../apis/youtube';
+import VideoList from './VideoList';
 
 class App extends React.Component {
 
-    onSearchSubmit(searchTerm) {
-        console.log(searchTerm)
+    state = { videos: [] }
+
+    onSearchSubmit = async (searchTerm) => {
+        const reponse = await youtube.get('/search', {
+            params: {
+                q: searchTerm
+            }
+        })
+        console.log(reponse.data.items);
+        this.setState({ videos: reponse.data.items })
     }
 
     render() {
@@ -23,7 +33,7 @@ class App extends React.Component {
                             Video Description
                         </div>
                         <div className="container__videoList">
-                            Video List
+                            <VideoList videos={this.state.videos} />
                         </div>
                     </div>
                 </div>
