@@ -1,5 +1,5 @@
 @import "config";
-
+@import "utility";
 * {
   margin: 0;
   padding: 0;
@@ -39,12 +39,15 @@ img {
 
   &__videoPlayer {
     @include grid-rowColumn-span(1, 4, 1, 9);
-    background-color: rgba(225, 65, 78, 0.253);
+    border: 1px solid royalblue;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
   }
 
   &__description {
     @include grid-rowColumn-span(4, 5, 1, 9);
-    background-color: rgba(169, 225, 65, 0.253);
+    border: 1px solid royalblue;
+    border-right-width: 0px;
   }
 
   &__videoList {

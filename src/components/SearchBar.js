@@ -10,6 +10,7 @@ class SearchBar extends React.Component {
         this.props.onSearchSubmit(event.target.value);
     }
 
+
     render() {
         return (
             <div className="search-container">

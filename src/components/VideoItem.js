@@ -1,10 +1,11 @@
 import React from 'react';
 import './VideoItem.scss';
 
-const VideoItem = ({ video }) => {
+const VideoItem = ({ video, onVideoSelect }) => {
     const { title, thumbnails } = video.snippet;
+
     return (
-        <div className="videoCard">
+        <div className="videoCard pointer" onClick={() => onVideoSelect(video)}>
             <div className="videoCard__image">
                 <img src={thumbnails.medium.url} alt="thumbnails" />
             </div>
